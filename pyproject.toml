@@ -1,9 +1,9 @@
 [project]
-name = "runpod_helpers"
-description = "A collection of helper nodes for RunPod serverless environments"
+name = "output_as_input"
+description = "A simple ComfyUI node that allows you to use recent output images as input in your workflows."
 version = "0.0.1"
 license = {file = "LICENSE"}
-dependencies = ["requests>=2.31.0", "tqdm>=4.66.0"]
+dependencies = []
 
 [project.urls]
 Repository = "https://github.com/a-und-b/ComfyUI_RunPod_Helpers"
@@ -11,5 +11,5 @@ Repository = "https://github.com/a-und-b/ComfyUI_RunPod_Helpers"
 
 [tool.comfy]
 PublisherId = "a-und-b"
-DisplayName = "ComfyUI_RunPod_Helpers"
+DisplayName = "Output as Input"
 Icon = ""
