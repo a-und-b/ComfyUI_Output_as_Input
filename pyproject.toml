@@ -6,7 +6,7 @@ license = {file = "LICENSE"}
 dependencies = []
 
 [project.urls]
-Repository = "https://github.com/a-und-b/ComfyUI_RunPod_Helpers"
+Repository = "https://github.com/a-und-b/ComfyUI_Output_as_Input"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
