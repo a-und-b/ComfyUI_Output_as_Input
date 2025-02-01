@@ -1,0 +1,15 @@
+[project]
+name = "runpod_helpers"
+description = "A collection of helper nodes for RunPod serverless environments"
+version = "0.0.1"
+license = {file = "LICENSE"}
+dependencies = ["requests>=2.31.0", "tqdm>=4.66.0"]
+
+[project.urls]
+Repository = "https://github.com/a-und-b/ComfyUI_RunPod_Helpers"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "a-und-b"
+DisplayName = "ComfyUI_RunPod_Helpers"
+Icon = ""
