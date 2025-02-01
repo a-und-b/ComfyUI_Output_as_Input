@@ -1,7 +1,7 @@
 [project]
 name = "output_as_input"
 description = "A simple ComfyUI node that allows you to use recent output images as input in your workflows."
-version = "0.0.1"
+version = "1.0.0"
 license = {file = "LICENSE"}
 dependencies = []
 
