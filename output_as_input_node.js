@@ -1,3 +1,5 @@
+console.log("[OutputAsInput Preview] output_as_input_node.js IS BEING LOADED AT THE TOP LEVEL!");
+
 import { app } from "/scripts/app.js";
 
 app.registerExtension({
