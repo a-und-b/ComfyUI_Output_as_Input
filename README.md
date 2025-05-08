@@ -1,3 +1,9 @@
+> [!NOTE]
+> There is now a native ComfyUI node called **"Load Image (from Outputs)"** available.  
+> I recommend using it instead. As a result, this repository is no longer under development.
+
+---
+
 # ComfyUI_Output_as_Input
 
 This is a simple custom ComfyUI node that allows you to easily use recent output images as input in your workflows. It does not allow image uploads on purpose and does not require any additional dependencies.
