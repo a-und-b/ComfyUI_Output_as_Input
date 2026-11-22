@@ -18,6 +18,8 @@ As soon as this node is published in the official ComfyUI registry, it will be a
 
 ## Usage
 
-1. Add the `OutputAsInput` node to your ComfyUI workflow.
-2. Connect the `OutputAsInput` node to the node that generates the image you want to use as input.
-3. Connect the `OutputAsInput` node to the node that will use the image as input.
+1. Add the **Output as Input** node (category: `image`).
+2. Pick an image from the ComfyUI `output/` folder in the dropdown.
+3. Connect the `IMAGE` / `MASK` outputs into the rest of your graph.
+
+Prefer the native **Load Image (from Outputs)** node for new workflows.
