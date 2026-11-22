@@ -2,15 +2,25 @@ import os
 import folder_paths
 from nodes import LoadImage
 
+
+def _list_output_images(output_dir):
+    images = [
+        f
+        for f in os.listdir(output_dir)
+        if f.lower().endswith((".png", ".jpg", ".jpeg", ".webp"))
+    ]
+    images.sort(
+        key=lambda x: os.path.getmtime(os.path.join(output_dir, x)),
+        reverse=True,
+    )
+    return images
+
+
 class OutputAsInput:
     @classmethod
     def INPUT_TYPES(cls):
         output_dir = folder_paths.get_output_directory()
-        # Get list of images from output directory
-        images = [f for f in os.listdir(output_dir) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.webp'))]
-        # Sort by modification time to get latest first
-        images.sort(key=lambda x: os.path.getmtime(os.path.join(output_dir, x)), reverse=True)
-        
+        images = _list_output_images(output_dir) if os.path.isdir(output_dir) else []
         return {
             "required": {
                 "image": (sorted(images), {"default": images[0] if images else None}),
