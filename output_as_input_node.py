@@ -3,10 +3,6 @@ import folder_paths
 from nodes import LoadImage
 
 class OutputAsInput:
-    def __init__(self):
-        self.output_dir = folder_paths.get_output_directory()
-        self.image_path = None
-
     @classmethod
     def INPUT_TYPES(cls):
         output_dir = folder_paths.get_output_directory()
@@ -26,9 +22,8 @@ class OutputAsInput:
     CATEGORY = "image"
 
     def load_image(self, image):
-        image_path = os.path.join(self.output_dir, image)
-        img = LoadImage()
-        return img.load_image(image_path)
+        # ComfyUI rejects absolute paths; the annotation resolves inside output/.
+        return LoadImage().load_image(f"{image} [output]")
 
 # Node registration
 NODE_CLASS_MAPPINGS = {
