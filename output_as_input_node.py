@@ -17,6 +17,8 @@ def _list_output_images(output_dir):
 
 
 class OutputAsInput:
+    """Load an image from ComfyUI's output directory as a workflow input."""
+
     @classmethod
     def INPUT_TYPES(cls):
         output_dir = folder_paths.get_output_directory()
@@ -28,8 +30,14 @@ class OutputAsInput:
         }
 
     RETURN_TYPES = ("IMAGE", "MASK")
+    RETURN_NAMES = ("image", "mask")
     FUNCTION = "load_image"
     CATEGORY = "image"
+    DESCRIPTION = (
+        "Loads an image from the ComfyUI output folder so generated files can "
+        "be reused as inputs. New workflows can use the native "
+        "Load Image (from Outputs) node instead."
+    )
 
     @classmethod
     def IS_CHANGED(cls, image):
@@ -41,11 +49,11 @@ class OutputAsInput:
         # ComfyUI rejects absolute paths; the annotation resolves inside output/.
         return LoadImage().load_image(f"{image} [output]")
 
-# Node registration
+
 NODE_CLASS_MAPPINGS = {
     "OutputAsInput": OutputAsInput
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "OutputAsInput": "Output As Input 🔄"
+    "OutputAsInput": "Output as Input"
 }
