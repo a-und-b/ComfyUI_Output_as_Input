@@ -21,6 +21,12 @@ class OutputAsInput:
     FUNCTION = "load_image"
     CATEGORY = "image"
 
+    @classmethod
+    def IS_CHANGED(cls, image):
+        # Re-run only when the chosen file changes, not when other outputs appear.
+        path = os.path.join(folder_paths.get_output_directory(), image)
+        return os.path.getmtime(path) if os.path.isfile(path) else float("nan")
+
     def load_image(self, image):
         # ComfyUI rejects absolute paths; the annotation resolves inside output/.
         return LoadImage().load_image(f"{image} [output]")
