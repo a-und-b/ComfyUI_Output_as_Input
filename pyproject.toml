@@ -1,7 +1,7 @@
 [project]
 name = "output_as_input"
-description = "A simple ComfyUI node that allows you to use recent output images as input in your workflows."
-version = "1.0.3"
+description = "Deprecated: use ComfyUI's core node Load Image (from Outputs) instead. Loads an image from the output folder as a workflow input; saved workflows keep working."
+version = "1.0.4"
 license = {file = "LICENSE"}
 dependencies = []
 
