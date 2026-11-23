@@ -33,6 +33,8 @@ class OutputAsInput:
     RETURN_NAMES = ("image", "mask")
     FUNCTION = "load_image"
     CATEGORY = "image"
+    # Retired 2026-11-23: loads in saved workflows, hidden from search; use the core node.
+    DEPRECATED = True
     DESCRIPTION = (
         "Loads an image from the ComfyUI output folder so generated files can "
         "be reused as inputs. New workflows can use the native "
